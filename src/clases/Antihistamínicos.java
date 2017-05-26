@@ -12,7 +12,7 @@ package clases;
 public class Antihistamínicos extends Medicamentos {
 
     /**
-     *
+     * Constructor para crear Medicamentos de tipo Antihistamínicos
      * @param referencia
      * @param nombre
      * @param pA

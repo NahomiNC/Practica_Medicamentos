@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas;
 
 import clases.DNI;
@@ -19,8 +14,7 @@ import javax.swing.JOptionPane;
  * @author dam117
  */
 public class Vregistro extends javax.swing.JFrame {
-
-    static Vregistro registro = new Vregistro();
+    static Vregistro registro = new Vregistro(); //Ventana creada estática para poder usarla desde cualquier ventana
 
     /**
      * Creates new form Vregistro
@@ -250,25 +244,24 @@ public class Vregistro extends javax.swing.JFrame {
 
     private void botonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarActionPerformed
         try {
-            DNI midni = new DNI(txtdni.getText());
-            if (!txtpassword.getText().equalsIgnoreCase(txtpassword2.getText())) {
+            DNI midni = new DNI(txtdni.getText()); //Comprueba que el dni sea correcto y lo asigna
+            if (!txtpassword.getText().equalsIgnoreCase(txtpassword2.getText())) { //Si las contraseñas introducidas no son iguales salta un mensaje
                 JOptionPane.showMessageDialog(null, "Creación denegada:\n"
                         + "Las contraseñas no coinciden", "Error",
                         JOptionPane.ERROR_MESSAGE);
-            } else {
+            } else { //Si son iguales ejecuta
                 if (!(txtusuario.getText().isEmpty() && txtnombre.getText().isEmpty()
                         && txtapellidos.getText().isEmpty() && txtcorreo.getText().isEmpty()
-                        && txtpassword.getText().isEmpty())) {
+                        && txtpassword.getText().isEmpty())) { //Si no hay ningun campo vacio crea el usuario
                     Usuario usuario = new Usuario(txtusuario.getText(), txtnombre.getText(), txtapellidos.getText(), txtcorreo.getText(), midni, txtpassword.getText());
-                    ListaUsuarios.milista.añadir(usuario);
+                    ListaUsuarios.milista.añadir(usuario); //Aáde el usuario a la lista de usuarios
                     JOptionPane.showMessageDialog(null, "Creación admitida:\n"
                         + "Usuario creado correctamente.", "Información",
-                        JOptionPane.INFORMATION_MESSAGE);
-                    //ListaUsuarios.milista.mostrarLista(); 
-                    limpiarceldas();
-                    this.dispose();
-                    Vprincipal.inicio.setVisible(true);
-                } else {
+                        JOptionPane.INFORMATION_MESSAGE); 
+                    limpiarceldas(); //pone los campos en blanco
+                    this.dispose(); //Cierra esta ventana
+                    Vprincipal.inicio.setVisible(true); //Hace visible la ventana principal
+                } else { //Si hay algún campo vacio salta un mensaje
                     JOptionPane.showMessageDialog(null, "Creación denegada:\n"
                             + "Error. Hay algún campo vacio", "Error",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -290,17 +283,18 @@ public class Vregistro extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEnviarActionPerformed
 
     private void txtcorreo2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreo2FocusLost
+        //Si los correos no coinciden pone el siguiente mensaje en un label
         if (!txtcorreo.getText().equalsIgnoreCase(txtcorreo2.getText())) {
             mensajeCorreo.setText("Los correos no coinciden!");
         }
     }//GEN-LAST:event_txtcorreo2FocusLost
 
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
-        limpiarceldas();
+        limpiarceldas(); //Borra los campos de registro
     }//GEN-LAST:event_botonBorrarActionPerformed
 
     /**
-     *
+     * Método para cambiar el icono de la ventana
      * @return
      */
     @Override
@@ -370,7 +364,9 @@ public class Vregistro extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtpassword2;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
-
+    /**
+     * Método para borrar los campos
+     */
     private void limpiarceldas() {
         txtusuario.setText("");
         txtnombre.setText("");

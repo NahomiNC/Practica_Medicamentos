@@ -12,7 +12,7 @@ package clases;
 public class RelajantesMusculares extends Medicamentos {
 
     /**
-     *
+     * Constructor para crear Medicamentos de tipo Relajantes musculares
      * @param referencia
      * @param nombre
      * @param pA

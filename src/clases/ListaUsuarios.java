@@ -10,21 +10,22 @@ import java.util.ListIterator;
  * @author dam117
  */
 public class ListaUsuarios {
-    private ArrayList<Usuario> listaUsuarios; //Guarda todos los objetos, sin orden y duplicados
+    private ArrayList<Usuario> listaUsuarios; 
 
     /**
-     *
+     * Constructor que crea una lista de usuarios
      */
     public ListaUsuarios() {
-        listaUsuarios = new ArrayList<Usuario>(); //Ponemos que tipo de objetos va a contener y creamos la lista
+        listaUsuarios = new ArrayList<Usuario>();
     }
 
     /**
-     *
+     * Lista creada estática para poder usarla desde otras ventanas/clases
      */
     static public ListaUsuarios milista = new ListaUsuarios();
+    
     /**
-     * Método para añadir una persona a la agenda
+     * Método para añadir una persona a la lista
      * @param user
      * @throws excepciones.NomUsuarioCorrectoException
      */
@@ -33,21 +34,7 @@ public class ListaUsuarios {
             listaUsuarios.add(user);
         } else throw new NomUsuarioCorrectoException("El nombre de usuario ya existe, escoge otro.");
     }
-    /**
-     * Método para mostrar la lista de contactos de la agenda
-     */
-    public void mostrarLista(){
-        if (listaUsuarios.isEmpty()) {
-            System.out.println("La lista está vacia.");
-        } else {
-            System.out.println("Lista:");
-            for (Usuario p : listaUsuarios) {
-                System.out.println(p.toString()+"  Posicion: " + listaUsuarios.indexOf(p)); 
-            }
-            System.out.println("Nº de personas en la agenda: " + listaUsuarios.size());
-        }
-    }
-
+    
     /**
      * Método para que no se puedan crear dos objetos con el mismo nombre
      * @param user
@@ -66,7 +53,8 @@ public class ListaUsuarios {
     }
 
     /**
-     *
+     * Método para comprobar que el usuario que intenta entrar lo hace con datos correctos
+     * Comprueba que el nombre de usuario y contraseña coincidan con alguno de la lista
      * @param nomUsuario
      * @param contrasenha
      * @return

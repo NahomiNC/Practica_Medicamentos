@@ -13,19 +13,19 @@ public class ListaMedicamentos {
     private ArrayList<Medicamentos> listaMedicamentos;
 
     /**
-     *
+     * Lista creada estática para poder usarla desde otras ventanas/clases
      */
     public static ListaMedicamentos listaM = new ListaMedicamentos();
 
     /**
-     *
+     * Constructor que crea una lista de medicamentos
      */
     public ListaMedicamentos() {
         listaMedicamentos = new ArrayList<Medicamentos>();
     }
 
     /**
-     *
+     * Método para obtener la lista de medicamentos
      * @return
      */
     public ArrayList<Medicamentos> getListaMedicamentos() {
@@ -33,7 +33,7 @@ public class ListaMedicamentos {
     }
 
     /**
-     *
+     * Método para obtener la lista de medicamentos estática
      * @return
      */
     public static ListaMedicamentos getListaM() {
@@ -41,7 +41,9 @@ public class ListaMedicamentos {
     }
 
     /**
-     *
+     * Método para añadir medicamentos a la lista
+     * Comprueba también que la referencia y el nombre no existan
+     * Si ya existe alguno de esos atributos el medicamento no se guarda en la lista
      * @param tipoM
      */
     public void añadir(Medicamentos tipoM) {
@@ -62,7 +64,7 @@ public class ListaMedicamentos {
 
     /**
      * Método para eliminar a una persona de la agenda
-     *
+     * Busca que la referencia exista dentro de la lista y si es así la borra
      * @param referencia
      * @return
      */
@@ -81,7 +83,9 @@ public class ListaMedicamentos {
     }
 
     /**
-     *
+     * Método para modificar un medicamento que ya esté dentro de la lista
+     * Se necesitaran todos los atributos del medicamento para modificarlo
+     * Buscará el medicamento que deseemos borrar por la referencia
      * @param referencia
      * @param nombre
      * @param laboratorio
@@ -112,7 +116,8 @@ public class ListaMedicamentos {
     }
 
     /**
-     *
+     * Método para buscar un medicamento dentro de nuestra lista
+     * El medicamento será buscado por el nombre y si lo encuentra devolverá los datos
      * @param nombre
      * @return
      */
@@ -129,6 +134,11 @@ public class ListaMedicamentos {
         return cadena;
     }
 
+    /**
+     * Método utilizado para compbrobar si existe una referencia en la lista
+     * @param tipoM
+     * @return 
+     */
     private boolean comprobarRef(Medicamentos tipoM) {
         Medicamentos temporal;
         ListIterator<Medicamentos> iterList = listaMedicamentos.listIterator();
@@ -141,7 +151,11 @@ public class ListaMedicamentos {
         return true;
     }
     
-
+    /**
+     * Método utilizado para comprobar si existe un nombre dentro de la lista
+     * @param tipoM
+     * @return 
+     */
     private boolean comprobarNombre(Medicamentos tipoM) {
         Medicamentos temporal;
         ListIterator<Medicamentos> iterList = listaMedicamentos.listIterator();
@@ -152,20 +166,5 @@ public class ListaMedicamentos {
             }
         }
         return true;
-    }
-
-    /**
-     *
-     */
-    public void mostrarLista() {
-        if (listaMedicamentos.isEmpty()) {
-            System.out.println("La lista está vacía.");
-        } else {
-            System.out.println("Lista:");
-            for (Medicamentos med : listaMedicamentos) {
-                System.out.println(med.toString() + "  Posicion: " + listaMedicamentos.indexOf(med));
-            }
-            System.out.println("Nº de personas en la agenda: " + listaMedicamentos.size());
-        }
     }
 }

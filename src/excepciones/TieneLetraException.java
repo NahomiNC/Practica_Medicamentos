@@ -12,7 +12,7 @@ package excepciones;
 public class TieneLetraException extends Exception {
 
     /**
-     *
+     * Constructor que recoge el mensaje si no contiene una letra
      * @param msg
      */
     public TieneLetraException(String msg){

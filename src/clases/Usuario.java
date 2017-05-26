@@ -12,7 +12,7 @@ public class Usuario {
     private DNI dni;
 
     /**
-     *
+     * Constructor que lleva los atributos necesarios para poder crear usuarios. 
      * @param nomUsuario
      * @param nombre
      * @param apellidos
@@ -32,68 +32,63 @@ public class Usuario {
         this.dni = dni;
         if (contrasenha.length() >= 4) {
             this.contrasenha = contrasenha;
-        } else throw new ContrasenhaCorrectaException("La contraseña debe contener más de 4 caracteres/digitos."); 
-        
-        
+        } else throw new ContrasenhaCorrectaException("La contraseña debe contener más de 4 caracteres/digitos.");
     }
     
     /**
-     *
-     * @return
+     * Método para obtener el nombre 
+     * @return devuelve el nombre de usuario (con el que entra en la aplicación)
      */
     public String getNomUsuario() {
         return nomUsuario;
     }
 
     /**
-     *
-     * @return
+     * Método para obtner el nombre
+     * @return devuelve el nombre del usuario
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener los apellidos
+     * @return devuelve los apellidos del usuario
      */
     public String getApellidos() {
         return apellidos;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener el correo electrónico
+     * @return devuelve el correo del usuario
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener el dni
+     * @return devuelve el dni del usuario 
      */
     public DNI getDni() {
         return dni;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener la contraseña
+     * @return devuelve la contraseña del usuario
      */
     public String getContrasenha() {
         return contrasenha;
     }
 
     /**
-     *
-     * @return
+     * Método para comprobar que el correo que se introduce es correcto
+     * Por medio de un patrón comprobamos que sea "ejemplo@gmail.com"
+     * @param email
+     * @return 
      */
-    @Override
-    public String toString() {
-        return "Usuario{" + "nomUsuario = " + nomUsuario + ", nombre = " + nombre + ", apellidos = " + apellidos + ", email = " + email + ", dni = " + dni + ", contrasenha = " + contrasenha + '}';
-    }
-
     private boolean comprobarEmail(String email) {
         //Creamos un string con el patrón
         String patronEmail = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -106,5 +101,12 @@ public class Usuario {
         return false;
     }
     
-    
+    /**
+     * Método para mostrar los datos del usuario
+     * @return devuelve una cadena con los datos del usuario
+     */
+    @Override
+    public String toString() {
+        return "Usuario{" + "nomUsuario = " + nomUsuario + ", nombre = " + nombre + ", apellidos = " + apellidos + ", email = " + email + ", dni = " + dni + ", contrasenha = " + contrasenha + '}';
+    }
 }

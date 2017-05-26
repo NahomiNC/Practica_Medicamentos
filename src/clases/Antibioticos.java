@@ -12,7 +12,7 @@ package clases;
 public class Antibioticos extends Medicamentos {
     
     /**
-     *
+     * Constructor para crear Medicamentos de tipo Antibióticos
      * @param referencia
      * @param nombre
      * @param pA

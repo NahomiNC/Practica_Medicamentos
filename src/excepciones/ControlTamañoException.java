@@ -12,7 +12,7 @@ package excepciones;
 public class ControlTamañoException extends Exception {
     
     /**
-     *
+     * Constructor que recoge el mensaje si el el tamaño del dni no es correcto
      * @param msg
      */
     public ControlTamañoException(String msg){

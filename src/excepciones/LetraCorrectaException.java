@@ -12,7 +12,7 @@ package excepciones;
 public class LetraCorrectaException extends Exception {
 
     /**
-     *
+     * Constructor que recoge el mensaje si la letra del DNI no es la correcta
      * @param msg
      */
     public LetraCorrectaException(String msg){

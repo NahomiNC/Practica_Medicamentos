@@ -12,7 +12,7 @@ public abstract class Medicamentos {
     private int referencia;
 
     /**
-     *
+     * Constructor que lleva los atributos necesarios para poder crear tipos de medicamentos.
      * @param referencia
      * @param nombre
      * @param pA
@@ -29,55 +29,55 @@ public abstract class Medicamentos {
     }
 
     /**
-     *
-     * @return
+     * Método para obtener el nombre
+     * @return devuelve el nombre del medicamento
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener el principio activo
+     * @return devuelve el principio activo del medicamento
      */
     public String getPrincipioActivo() {
         return principioActivo;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener el nombre del Laboratorio que lo fabrica
+     * @return devuelve el laboratio del medicamento
      */
     public String getLaboratorio() {
         return laboratorio;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener si necesita o no receta
+     * @return devuelve si necesita o no receta el medicamento
      */
     public String getReceta() {
         return receta;
     }
 
     /**
-     *
-     * @return
+     * Método para obtener la referencia del medicamento que debe ser unico
+     * @return devuelve la referencia del medicamento
      */
     public int getReferencia() {
         return referencia;
     }
 
     /**
-     *
-     * @param nombre
+     * Método para asignar un nombre a un medicamento
+     * @param nombre 
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     *
+     * Método para asignar el principio activo a un medicamento
      * @param principioActivo
      */
     public void setPrincipioActivo(String principioActivo) {
@@ -85,7 +85,7 @@ public abstract class Medicamentos {
     }
 
     /**
-     *
+     * Método para asignar el Laboratorio que la fabrica a un medicamento
      * @param laboratorio
      */
     public void setLaboratorio(String laboratorio) {
@@ -93,7 +93,7 @@ public abstract class Medicamentos {
     }
 
     /**
-     *
+     * Método para asignar si necesita o no receta un medicamento
      * @param receta
      */
     public void setReceta(String receta) {
@@ -101,7 +101,7 @@ public abstract class Medicamentos {
     }
 
     /**
-     *
+     * Método para asignar la referencia a un medicamento
      * @param referencia
      */
     public void setReferencia(int referencia) {
@@ -109,8 +109,8 @@ public abstract class Medicamentos {
     }
 
     /**
-     *
-     * @return
+     * Método para mostrar los datos de un medicamento
+     * @return devuelve los datos de los medicamentos
      */
     @Override
     public String toString() {

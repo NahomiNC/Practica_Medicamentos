@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Práctica 3ª Evaluación
+ * App - Gestión de medicamentos
  */
 package ventanas;
 
@@ -34,8 +33,7 @@ import javax.swing.JOptionPane;
  */
 public class Vprincipal extends javax.swing.JFrame {
 
-    static Vprincipal inicio = new Vprincipal();
-    //private Vgestion vg = new Vgestion(this,true);
+    static Vprincipal inicio = new Vprincipal(); //Ventana creada estática para poder usarla desde cualquier ventana
 
     /**
      * Creates new form Vprincipal
@@ -187,10 +185,10 @@ public class Vprincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
-        if (!ListaUsuarios.milista.comprobarLogin(txtUsuario.getText(), txtPassword.getText())) {
-            this.dispose();
-            Vgestion.gestion.setVisible(true);
-        } else {
+        if (!ListaUsuarios.milista.comprobarLogin(txtUsuario.getText(), txtPassword.getText())) { //Si encuentra el nombre de usuario y la pass es correcta entra
+            this.dispose(); //Cierra esta ventana
+            Vgestion.gestion.setVisible(true); //Hace visible la ventana de gestion
+        } else { //Si algo no está bien salta una ventana con el mensaje
             JOptionPane.showMessageDialog(null, "Acceso denegado:\n"
                     + "Por favor ingrese un usuario y/o contraseña correctos", "Acceso denegado",
                     JOptionPane.ERROR_MESSAGE);
@@ -198,12 +196,12 @@ public class Vprincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEntrarActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
-        this.setVisible(false);
-        Vregistro.registro.setVisible(true);
+        this.setVisible(false); //Deja de ser visible esta ventana
+        Vregistro.registro.setVisible(true); //Hace visible la ventana de registro
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     /**
-     *
+     * Método para cambiar el icono de la ventana
      * @return
      */
     @Override

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas;
 
 import clases.Analgesicos;
@@ -19,15 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author dam117
  */
-public class Vgestion extends javax.swing.JDialog {
-
-    static Vgestion gestion = new Vgestion(null, true);
+public class Vgestion extends javax.swing.JDialog {    
+    static Vgestion gestion = new Vgestion(null, true); //Ventana creada estática para poder usarla desde cualquier ventana
     private VLista vl;
     boolean asignado = false;
 
     /**
      * Creates new form Vgestion
-     *
+     * Además pone el texto adicional al pasar por encima de un botón
      * @param parent
      * @param modal
      */
@@ -284,17 +278,17 @@ public class Vgestion extends javax.swing.JDialog {
 
 
     private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
-        this.dispose();
+        this.dispose(); //Cierra esta ventana
     }//GEN-LAST:event_botonCerrarActionPerformed
 
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
         String tipo;
-        tipo = comboTipo.getSelectedItem().toString();
-        if (txtReferencia.getText().length() == 6) {
+        tipo = comboTipo.getSelectedItem().toString(); //Asigna el texto que hay en el combo
+        if (txtReferencia.getText().length() == 6) { //Si la referencia tiene un tamaño de 6 crea los medicamentos segun el tipo
             switch (tipo) {
                 case "Antibiótico":
                     Antibioticos m1 = new Antibioticos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                    ListaMedicamentos.listaM.añadir(m1);
+                    ListaMedicamentos.listaM.añadir(m1); //Añade el medicamento a la lista
                     JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl antibiótico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case "Analgésico":
@@ -318,7 +312,7 @@ public class Vgestion extends javax.swing.JDialog {
                     JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl diurético ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                     break;
             }
-        } else {
+        } else { //Si no tiene longitud 6 salta un mensaje y no crea el objeto
             JOptionPane.showMessageDialog(null, "Creación denegada:\n"
                     + "La referencia no contiene 6 dígitos.", "Error",
                     JOptionPane.ERROR_MESSAGE);
@@ -326,22 +320,24 @@ public class Vgestion extends javax.swing.JDialog {
     }//GEN-LAST:event_botonAñadirActionPerformed
 
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
-        ListaMedicamentos.listaM.eliminar(Integer.parseInt(txtReferencia.getText()));
+        ListaMedicamentos.listaM.eliminar(Integer.parseInt(txtReferencia.getText())); //Si encuentra la referencia borra el medicamento
         JOptionPane.showMessageDialog(null, "Medicamento borrado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonBorrarActionPerformed
 
     private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+        //Si encuentra la referencia del medicamento modifica sus datos
         ListaMedicamentos.listaM.modificarMedicamento(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtLaboratorio.getText(), txtPA.getText(), comboReceta.getSelectedItem().toString());
         JOptionPane.showMessageDialog(null, "Medicamento modificado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonModificarActionPerformed
 
     private void botonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListarActionPerformed
-        this.setVisible(false);
-        vl = new VLista();
-        vl.setVisible(true);
+        this.setVisible(false); //Deja de ser visible esta ventana
+        vl = new VLista(); //Creamos una ventana nueva de Lista
+        vl.setVisible(true); //Hacemos visible la ventana de lista
     }//GEN-LAST:event_botonListarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        //Si encuentra el medicamento por su nombre, muestra sus datos
         JOptionPane.showMessageDialog(null, ListaMedicamentos.listaM.buscarMedicamento(txtNombre.getText()), null, JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonBuscarActionPerformed
 

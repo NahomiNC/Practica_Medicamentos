@@ -8,7 +8,7 @@ public class DNI {
     private String dni;
     
     /**
-     *
+     * Constructor para asignar un DNI correcto 
      * @param dni
      * @throws ControlTamañoException
      * @throws TodoDigitosException
@@ -28,9 +28,9 @@ public class DNI {
     }
     
     /**
-     *
+     * Método que comprueba que el tamaño del DNI sea el correcto
      * @param dni
-     * @return
+     * @return devuelve true si es correcto
      */
     public boolean controlTamaño(String dni){
         StringBuffer dniControl = new StringBuffer(dni);
@@ -41,9 +41,9 @@ public class DNI {
     }
     
     /**
-     *
+     * Método para comprobar que 8 sean dígitos
      * @param dni
-     * @return
+     * @return devuelve true si es correcto
      */
     public boolean todoDigitos(String dni){
         StringBuffer dniControl = new StringBuffer(dni);
@@ -57,9 +57,9 @@ public class DNI {
     }
     
     /**
-     *
+     * Método para comprobar que contiene una letra
      * @param dni
-     * @return
+     * @return devuelve true si es correcto
      */
     public boolean tieneLetra(String dni){
         StringBuffer dniControl = new StringBuffer(dni);        
@@ -70,9 +70,9 @@ public class DNI {
     }
     
     /**
-     *
+     * Método para comprobar que la letra sea la correcta
      * @param dni
-     * @return
+     * @return devuelve true si es correcto
      */
     public boolean letraCorrecta(String dni){
         String[]letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
@@ -87,8 +87,8 @@ public class DNI {
     }
 
     /**
-     *
-     * @return
+     * Método para mostrar el dni
+     * @return devuelve el dni
      */
     @Override
     public String toString() {

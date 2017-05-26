@@ -12,7 +12,7 @@ package excepciones;
 public class NomUsuarioCorrectoException extends Exception {
 
     /**
-     *
+     * Constructor que recoge el mensaje si el nombre de usuario ya existe
      * @param msg
      */
     public NomUsuarioCorrectoException(String msg) {

@@ -12,7 +12,7 @@ package clases;
 public class Diuréticos extends Medicamentos {
 
     /**
-     *
+     * Constructor para crear Medicamentos de tipo Diuréticos
      * @param referencia
      * @param nombre
      * @param pA

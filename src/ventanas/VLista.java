@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas;
 
 import clases.ListaMedicamentos;
@@ -28,7 +23,8 @@ public class VLista extends javax.swing.JDialog {
     }
 
     /**
-     *
+     * Constructor creado para llamar a una nueva ventana
+     * También genera la vista de la lista de medicamentos en un JTable
      */
     public VLista() {
         initComponents();
@@ -191,13 +187,13 @@ public class VLista extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        this.dispose();
-        Vgestion.gestion.dispose();
+        this.dispose(); //Cierra esta ventana
+        Vgestion.gestion.dispose(); //Cierra la ventana de gestón
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        this.dispose();        
-        Vgestion.gestion.setVisible(true);
+        this.dispose(); //Cierra esta ventana
+        Vgestion.gestion.setVisible(true); //Hace visible la ventana de gestión
     }//GEN-LAST:event_botonVolverActionPerformed
 
     /**

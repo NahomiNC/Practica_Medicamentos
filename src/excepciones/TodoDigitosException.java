@@ -12,7 +12,7 @@ package excepciones;
 public class TodoDigitosException extends Exception {
 
     /**
-     *
+     * Constructor que recoge el mensaje si en los 8 primero caracteres no son todo dígitos
      * @param msg
      */
     public TodoDigitosException(String msg){
