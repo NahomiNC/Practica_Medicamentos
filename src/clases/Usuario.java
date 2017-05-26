@@ -11,6 +11,17 @@ public class Usuario {
     private String nomUsuario, nombre, apellidos, email, contrasenha;
     private DNI dni;
 
+    /**
+     *
+     * @param nomUsuario
+     * @param nombre
+     * @param apellidos
+     * @param email
+     * @param dni
+     * @param contrasenha
+     * @throws EmailCorrectoException
+     * @throws ContrasenhaCorrectaException
+     */
     public Usuario(String nomUsuario, String nombre, String apellidos, String email, DNI dni, String contrasenha) throws EmailCorrectoException, ContrasenhaCorrectaException {
         this.nomUsuario = nomUsuario;        
         this.nombre = nombre;
@@ -26,31 +37,58 @@ public class Usuario {
         
     }
     
-
+    /**
+     *
+     * @return
+     */
     public String getNomUsuario() {
         return nomUsuario;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getApellidos() {
         return apellidos;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @return
+     */
     public DNI getDni() {
         return dni;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getContrasenha() {
         return contrasenha;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Usuario{" + "nomUsuario = " + nomUsuario + ", nombre = " + nombre + ", apellidos = " + apellidos + ", email = " + email + ", dni = " + dni + ", contrasenha = " + contrasenha + '}';

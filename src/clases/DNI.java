@@ -7,6 +7,14 @@ import excepciones.*;
 public class DNI {
     private String dni;
     
+    /**
+     *
+     * @param dni
+     * @throws ControlTamañoException
+     * @throws TodoDigitosException
+     * @throws TieneLetraException
+     * @throws LetraCorrectaException
+     */
     public DNI(String dni) throws ControlTamañoException, TodoDigitosException, TieneLetraException, LetraCorrectaException {
         if(controlTamaño(dni) == true)
             if(todoDigitos(dni) == true)
@@ -19,6 +27,11 @@ public class DNI {
         else throw new ControlTamañoException("El tamaño no es el indicado.");
     }
     
+    /**
+     *
+     * @param dni
+     * @return
+     */
     public boolean controlTamaño(String dni){
         StringBuffer dniControl = new StringBuffer(dni);
         if (dniControl.length() == 9) 
@@ -27,6 +40,11 @@ public class DNI {
             return false;        
     }
     
+    /**
+     *
+     * @param dni
+     * @return
+     */
     public boolean todoDigitos(String dni){
         StringBuffer dniControl = new StringBuffer(dni);
         int i = 0;
@@ -38,6 +56,11 @@ public class DNI {
         return true;
     }
     
+    /**
+     *
+     * @param dni
+     * @return
+     */
     public boolean tieneLetra(String dni){
         StringBuffer dniControl = new StringBuffer(dni);        
         if (Character.isLetter(dniControl.charAt(8))){
@@ -46,6 +69,11 @@ public class DNI {
         return false;
     }
     
+    /**
+     *
+     * @param dni
+     * @return
+     */
     public boolean letraCorrecta(String dni){
         String[]letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
         StringBuffer dniControl = new StringBuffer(dni);
@@ -58,6 +86,10 @@ public class DNI {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return this.dni;

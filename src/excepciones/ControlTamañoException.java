@@ -11,6 +11,10 @@ package excepciones;
  */
 public class ControlTamañoException extends Exception {
     
+    /**
+     *
+     * @param msg
+     */
     public ControlTamañoException(String msg){
         super(msg);
     }

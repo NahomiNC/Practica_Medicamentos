@@ -10,6 +10,11 @@ package excepciones;
  * @author dam117
  */
 public class LetraCorrectaException extends Exception {
+
+    /**
+     *
+     * @param msg
+     */
     public LetraCorrectaException(String msg){
         super(msg);
     }

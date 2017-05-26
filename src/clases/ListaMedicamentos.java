@@ -11,20 +11,39 @@ import javax.swing.JOptionPane;
 public class ListaMedicamentos {
 
     private ArrayList<Medicamentos> listaMedicamentos;
+
+    /**
+     *
+     */
     public static ListaMedicamentos listaM = new ListaMedicamentos();
 
+    /**
+     *
+     */
     public ListaMedicamentos() {
         listaMedicamentos = new ArrayList<Medicamentos>();
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Medicamentos> getListaMedicamentos() {
         return listaMedicamentos;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ListaMedicamentos getListaM() {
         return listaM;
     }
 
+    /**
+     *
+     * @param tipoM
+     */
     public void añadir(Medicamentos tipoM) {
         if (comprobarRef(tipoM) == true) {
             if (comprobarNombre(tipoM) == true) {
@@ -44,7 +63,7 @@ public class ListaMedicamentos {
     /**
      * Método para eliminar a una persona de la agenda
      *
-     * @param nombre
+     * @param referencia
      * @return
      */
     public boolean eliminar(int referencia) {
@@ -61,6 +80,15 @@ public class ListaMedicamentos {
         return correcto;
     }
 
+    /**
+     *
+     * @param referencia
+     * @param nombre
+     * @param laboratorio
+     * @param pa
+     * @param receta
+     * @return
+     */
     public boolean modificarMedicamento(int referencia, String nombre, String laboratorio, String pa, String receta) {
         boolean encontrado = false;
         ListIterator<Medicamentos> iterList = listaMedicamentos.listIterator();
@@ -83,6 +111,11 @@ public class ListaMedicamentos {
         return encontrado;
     }
 
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     public String buscarMedicamento(String nombre) {
         String cadena = "El medicamento " + nombre + " no existe."; 
         ListIterator<Medicamentos> iterador = listaMedicamentos.listIterator(); 
@@ -121,6 +154,9 @@ public class ListaMedicamentos {
         return true;
     }
 
+    /**
+     *
+     */
     public void mostrarLista() {
         if (listaMedicamentos.isEmpty()) {
             System.out.println("La lista está vacía.");

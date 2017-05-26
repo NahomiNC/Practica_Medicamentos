@@ -201,6 +201,11 @@ public class Vprincipal extends javax.swing.JFrame {
         this.setVisible(false);
         Vregistro.registro.setVisible(true);
     }//GEN-LAST:event_botonRegistroActionPerformed
+
+    /**
+     *
+     * @return
+     */
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().

@@ -25,6 +25,8 @@ public class Vgestion extends javax.swing.JDialog {
     boolean asignado = false;
     /**
      * Creates new form Vgestion
+     * @param parent
+     * @param modal
      */
     public Vgestion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

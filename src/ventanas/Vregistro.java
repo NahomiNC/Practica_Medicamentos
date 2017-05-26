@@ -298,6 +298,11 @@ public class Vregistro extends javax.swing.JFrame {
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
         limpiarceldas();
     }//GEN-LAST:event_botonBorrarActionPerformed
+
+    /**
+     *
+     * @return
+     */
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().

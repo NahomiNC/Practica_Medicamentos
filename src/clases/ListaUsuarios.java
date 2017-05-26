@@ -12,14 +12,21 @@ import java.util.ListIterator;
 public class ListaUsuarios {
     private ArrayList<Usuario> listaUsuarios; //Guarda todos los objetos, sin orden y duplicados
 
+    /**
+     *
+     */
     public ListaUsuarios() {
         listaUsuarios = new ArrayList<Usuario>(); //Ponemos que tipo de objetos va a contener y creamos la lista
     }
 
+    /**
+     *
+     */
     static public ListaUsuarios milista = new ListaUsuarios();
     /**
      * Método para añadir una persona a la agenda
      * @param user
+     * @throws excepciones.NomUsuarioCorrectoException
      */
     public void añadir(Usuario user) throws NomUsuarioCorrectoException {
         if (comprobarUsuario(user)) {
@@ -58,6 +65,12 @@ public class ListaUsuarios {
         return true;
     }
 
+    /**
+     *
+     * @param nomUsuario
+     * @param contrasenha
+     * @return
+     */
     public boolean comprobarLogin(String nomUsuario, String contrasenha) {
         Usuario temporal;
         ListIterator<Usuario> iterList = listaUsuarios.listIterator();

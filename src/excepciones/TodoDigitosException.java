@@ -10,6 +10,11 @@ package excepciones;
  * @author dam117
  */
 public class TodoDigitosException extends Exception {
+
+    /**
+     *
+     * @param msg
+     */
     public TodoDigitosException(String msg){
         super(msg);
     }

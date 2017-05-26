@@ -11,6 +11,14 @@ package clases;
  */
 public class RelajantesMusculares extends Medicamentos {
 
+    /**
+     *
+     * @param referencia
+     * @param nombre
+     * @param pA
+     * @param laboratorio
+     * @param receta
+     */
     public RelajantesMusculares(int referencia, String nombre, String pA,String laboratorio, String receta) {
         super(referencia, nombre, pA,laboratorio, receta);
     }

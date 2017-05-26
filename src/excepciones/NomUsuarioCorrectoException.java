@@ -11,6 +11,10 @@ package excepciones;
  */
 public class NomUsuarioCorrectoException extends Exception {
 
+    /**
+     *
+     * @param msg
+     */
     public NomUsuarioCorrectoException(String msg) {
         super(msg);
     }

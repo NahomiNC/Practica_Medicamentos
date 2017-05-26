@@ -10,6 +10,11 @@ package excepciones;
  * @author dam117
  */
 public class TieneLetraException extends Exception {
+
+    /**
+     *
+     * @param msg
+     */
     public TieneLetraException(String msg){
         super(msg);
     }

@@ -19,12 +19,17 @@ import javax.swing.table.DefaultTableModel;
 public class VLista extends javax.swing.JDialog {    
     /**
      * Creates new form VLista
+     * @param parent
+     * @param modal
      */
     public VLista(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
 
+    /**
+     *
+     */
     public VLista() {
         initComponents();
         DefaultTableModel tabla = (DefaultTableModel) jTable1.getModel();

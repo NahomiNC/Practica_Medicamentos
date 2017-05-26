@@ -10,6 +10,11 @@ package excepciones;
  * @author nahom
  */
 public class EmailCorrectoException extends Exception {
+
+    /**
+     *
+     * @param msg
+     */
     public EmailCorrectoException(String msg){
         super(msg);
     }

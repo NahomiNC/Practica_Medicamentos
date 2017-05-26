@@ -11,6 +11,10 @@ package excepciones;
  */
 public class ContrasenhaCorrectaException extends Exception {
 
+    /**
+     *
+     * @param msg
+     */
     public ContrasenhaCorrectaException(String msg) {
         super(msg);
     }
