@@ -20,11 +20,14 @@ import javax.swing.JOptionPane;
  * @author dam117
  */
 public class Vgestion extends javax.swing.JDialog {
+
     static Vgestion gestion = new Vgestion(null, true);
     private VLista vl;
     boolean asignado = false;
+
     /**
      * Creates new form Vgestion
+     *
      * @param parent
      * @param modal
      */
@@ -285,37 +288,41 @@ public class Vgestion extends javax.swing.JDialog {
     }//GEN-LAST:event_botonCerrarActionPerformed
 
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
-        String tipo;        
+        String tipo;
         tipo = comboTipo.getSelectedItem().toString();
-        switch (tipo) {
-            case "Antibiótico":
-                Antibioticos m1 = new Antibioticos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(),txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                ListaMedicamentos.listaM.añadir(m1);
-                JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl antibiótico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case "Analgésico":
-                Analgesicos m2 = new Analgesicos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(),txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                ListaMedicamentos.listaM.añadir(m2);
-                JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl analgésico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case "Antihistamínico":
-                Antihistamínicos m3 = new Antihistamínicos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(),txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                ListaMedicamentos.listaM.añadir(m3);
-                JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl antihistamínico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case "Relajante Muscular":
-                RelajantesMusculares m4 = new RelajantesMusculares(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(),txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                ListaMedicamentos.listaM.añadir(m4);
-                JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl relajante muscular ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case "Diuréticos":
-                Diuréticos m5 = new Diuréticos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(),txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
-                ListaMedicamentos.listaM.añadir(m5);
-                JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl diurético ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-                break;
-                
+        if (txtReferencia.getText().length() == 6) {
+            switch (tipo) {
+                case "Antibiótico":
+                    Antibioticos m1 = new Antibioticos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
+                    ListaMedicamentos.listaM.añadir(m1);
+                    JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl antibiótico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case "Analgésico":
+                    Analgesicos m2 = new Analgesicos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
+                    ListaMedicamentos.listaM.añadir(m2);
+                    JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl analgésico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case "Antihistamínico":
+                    Antihistamínicos m3 = new Antihistamínicos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
+                    ListaMedicamentos.listaM.añadir(m3);
+                    JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl antihistamínico ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case "Relajante Muscular":
+                    RelajantesMusculares m4 = new RelajantesMusculares(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
+                    ListaMedicamentos.listaM.añadir(m4);
+                    JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl relajante muscular ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case "Diuréticos":
+                    Diuréticos m5 = new Diuréticos(Integer.parseInt(txtReferencia.getText()), txtNombre.getText(), txtPA.getText(), txtLaboratorio.getText(), comboReceta.getSelectedItem().toString());
+                    ListaMedicamentos.listaM.añadir(m5);
+                    JOptionPane.showMessageDialog(null, "Medicamento guardado:\nEl diurético ha sido creado correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Creación denegada:\n"
+                    + "La referencia no contiene 6 dígitos.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
-             
     }//GEN-LAST:event_botonAñadirActionPerformed
 
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed

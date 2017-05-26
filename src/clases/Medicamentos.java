@@ -19,8 +19,8 @@ public abstract class Medicamentos {
      * @param laboratorio
      * @param receta
      */
-    public Medicamentos(int referencia, String nombre, String pA, String laboratorio, String receta) {
-        this.referencia = referencia;
+    public Medicamentos(int referencia, String nombre, String pA, String laboratorio, String receta) {        
+        this.referencia = referencia;     
         this.nombre = nombre;
         this.principioActivo = pA;
         this.laboratorio = laboratorio;
